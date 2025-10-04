@@ -4,7 +4,7 @@ import { clearUser } from "../utils/userSlice";
 import { API_URL } from "../utils/constants";
 import { Link, useNavigate } from "react-router-dom";
 import type { User } from "../types/user";
-import appLogo from "../assets/devConnect.png"
+import appLogo from "../../public/devConnect.png";
 
 const NavBar = () => {
   const userData = useSelector((store: { user: User | null }) => store.user);
@@ -27,11 +27,11 @@ const NavBar = () => {
     <div className="navbar bg-base-300">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-xl">
-          <img 
-          src={appLogo} 
-          alt="DevConnect Logo" 
-          className="w-22 h-20 mr-2 dark:invert" // Proper sizing and spacing
-        />
+          <img
+            src={appLogo}
+            alt="DevConnect Logo"
+            className="w-22 h-20 mr-2 dark:invert" // Proper sizing and spacing
+          />
         </Link>
       </div>
       {userData && (
