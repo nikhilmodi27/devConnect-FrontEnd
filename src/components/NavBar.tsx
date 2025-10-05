@@ -4,7 +4,7 @@ import { clearUser } from "../utils/userSlice";
 import { API_URL } from "../utils/constants";
 import { Link, useNavigate } from "react-router-dom";
 import type { User } from "../types/user";
-import appLogo from "../../public/devConnect.png";
+import appLogo from "../assets/devConnect.png";
 
 const NavBar = () => {
   const userData = useSelector((store: { user: User | null }) => store.user);
@@ -14,7 +14,7 @@ const NavBar = () => {
 
   const handleLogOut = async () => {
     try {
-      await axios.post(`${API_URL}/logout`, {}, { withCredentials: true });
+      await axios.post(`${API_URL}/auth/logout`, {}, { withCredentials: true });
     } catch (err) {
       console.error("Logout error:", err);
     } finally {

@@ -43,12 +43,12 @@ const Chat = () => {
     setError(null);
 
     try {
-      const chat = await axios.get(API_URL + `/chat/${targetUserId}`, {
+      const response = await axios.get(API_URL + `/chat/${targetUserId}`, {
         withCredentials: true,
       });
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const chatMessages = chat?.data?.messages.map((msg: any) => {
+      const chatMessages = response?.data?.chat.messages.map((msg: any) => {
         const { senderId, text } = msg;
         return {
           firstName: senderId?.firstName,

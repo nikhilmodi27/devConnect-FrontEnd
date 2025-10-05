@@ -66,7 +66,7 @@ const Login = () => {
         { withCredentials: true }
       );
 
-      dispatch(setUser(result.data));
+      dispatch(setUser(result.data.user));
       navigate("/", { replace: true });
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
@@ -94,7 +94,7 @@ const Login = () => {
         { withCredentials: true }
       );
 
-      dispatch(setUser(res.data.data));
+      dispatch(setUser(res.data.user));
       navigate("/profile", { replace: true });
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
